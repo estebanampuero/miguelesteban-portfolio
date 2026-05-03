@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+// ─── Foto de perfil — reemplazá por tu ruta real si cambiás el archivo ────────
+const PROFILE_PHOTO = '/profile.jpg';
+
 // ─── Scroll Animation ─────────────────────────────────────────────────────────
 
 const useFadeIn = (threshold = 0.12) => {
@@ -85,6 +88,48 @@ const stats = [
   { label: 'Kettlebell Cert.', value: 'Level I & II', sub: 'Certified Instructor' },
 ];
 
+// ─── Profile Photo ───────────────────────────────────────────────────────────
+
+interface ProfilePhotoProps {
+  size: 'hero' | 'card';
+  openToWork?: boolean;
+}
+
+const ProfilePhoto: React.FC<ProfilePhotoProps> = ({ size, openToWork = false }) => {
+  const [error, setError] = useState(false);
+  const isHero = size === 'hero';
+  const dim = isHero ? 'w-56 h-56 md:w-72 md:h-72' : 'w-20 h-20';
+  const textSize = isHero ? 'text-5xl' : 'text-xl';
+
+  const inner = (
+    <div className={`${dim} rounded-full overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center`}>
+      {!error ? (
+        <img
+          src={PROFILE_PHOTO}
+          alt="Miguel Moreira"
+          className="w-full h-full object-cover object-top"
+          onError={() => setError(true)}
+        />
+      ) : (
+        <span className={`${textSize} font-black text-white select-none`}>MM</span>
+      )}
+    </div>
+  );
+
+  if (!openToWork) return <div className={`${dim} rounded-full overflow-hidden`}>{inner}</div>;
+
+  return (
+    <div className={`relative ${dim}`}>
+      {/* Open to Work green ring — mismo estilo que LinkedIn */}
+      <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-to-br from-[#6dae4f] via-[#4a9e31] to-[#6dae4f]">
+        <div className="w-full h-full rounded-full bg-slate-950 p-[3px]">
+          {inner}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // ─── Navbar ──────────────────────────────────────────────────────────────────
 
 const Navbar: React.FC = () => {
@@ -142,52 +187,72 @@ const Hero: React.FC = () => (
       />
     </div>
 
-    <div className="max-w-5xl mx-auto px-6 py-32 relative z-10">
-      <FadeUp>
-        <span className="inline-flex items-center gap-2.5 text-blue-400 font-semibold tracking-widest uppercase text-xs mb-8 border border-blue-500/25 bg-blue-500/10 px-4 py-2 rounded-full">
-          <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-          Clinical Full-Stack Builder · HealthTech & AI Operator
-        </span>
-      </FadeUp>
+    <div className="max-w-5xl mx-auto px-6 py-32 relative z-10 w-full">
+      <div className="grid md:grid-cols-5 gap-10 items-center">
 
-      <FadeUp delay={100}>
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.04] tracking-tight mb-6">
-          I build HealthTech<br className="hidden md:block" /> systems that{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400">
-            actually ship.
-          </span>
-        </h1>
-      </FadeUp>
+        {/* Left: copy */}
+        <div className="md:col-span-3">
+          <FadeUp>
+            <span className="inline-flex items-center gap-2.5 text-blue-400 font-semibold tracking-widest uppercase text-xs mb-8 border border-blue-500/25 bg-blue-500/10 px-4 py-2 rounded-full">
+              <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
+              Clinical Full-Stack Builder · HealthTech & AI Operator
+            </span>
+          </FadeUp>
 
-      <FadeUp delay={200}>
-        <p className="text-xl text-slate-400 max-w-2xl mb-4 leading-relaxed">
-          8 years inside high-complexity hospital labs. Then I learned to code.
-        </p>
-        <p className="text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed">
-          The result: a builder who understands clinical workflows{' '}
-          <span className="text-slate-300 font-medium">and</span> can ship production software in React,
-          Flutter, and n8n — with no translation layer between medicine and engineering.
-        </p>
-      </FadeUp>
+          <FadeUp delay={100}>
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.04] tracking-tight mb-6">
+              I build HealthTech systems that{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400">
+                actually ship.
+              </span>
+            </h1>
+          </FadeUp>
 
-      <FadeUp delay={300}>
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="#projects"
-            className="bg-blue-600 hover:bg-blue-500 text-white px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5"
-          >
-            View Case Studies
-          </a>
-          <a
-            href="https://www.linkedin.com/in/miguel-moreira-ampuero/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-slate-800/70 hover:bg-slate-800 text-white px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 border border-slate-700 hover:border-slate-500 backdrop-blur"
-          >
-            LinkedIn ↗
-          </a>
+          <FadeUp delay={200}>
+            <p className="text-xl text-slate-400 max-w-xl mb-4 leading-relaxed">
+              8 years inside high-complexity hospital labs. Then I learned to code.
+            </p>
+            <p className="text-xl text-slate-400 max-w-xl mb-10 leading-relaxed">
+              The result: a builder who understands clinical workflows{' '}
+              <span className="text-slate-300 font-medium">and</span> can ship production software in React,
+              Flutter, and n8n — with no translation layer between medicine and engineering.
+            </p>
+          </FadeUp>
+
+          <FadeUp delay={300}>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#projects"
+                className="bg-blue-600 hover:bg-blue-500 text-white px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5"
+              >
+                View Case Studies
+              </a>
+              <a
+                href="https://www.linkedin.com/in/miguel-moreira-ampuero/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-slate-800/70 hover:bg-slate-800 text-white px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 border border-slate-700 hover:border-slate-500 backdrop-blur"
+              >
+                LinkedIn ↗
+              </a>
+            </div>
+          </FadeUp>
         </div>
-      </FadeUp>
+
+        {/* Right: profile photo */}
+        <FadeUp delay={150} className="hidden md:flex md:col-span-2 justify-center items-center">
+          <div className="relative flex flex-col items-center gap-4">
+            {/* Glow behind photo */}
+            <div className="absolute w-80 h-80 bg-blue-600/10 rounded-full blur-3xl" />
+            <ProfilePhoto size="hero" openToWork />
+            <span className="relative flex items-center gap-1.5 bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-semibold px-3 py-1.5 rounded-full">
+              <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+              Open to work · Canada
+            </span>
+          </div>
+        </FadeUp>
+
+      </div>
     </div>
   </header>
 );
@@ -348,55 +413,66 @@ const LinkedInCard: React.FC = () => (
     href="https://www.linkedin.com/in/miguel-moreira-ampuero/"
     target="_blank"
     rel="noopener noreferrer"
-    className="group block bg-slate-900/80 border border-slate-800 hover:border-[#0A66C2]/60 rounded-2xl overflow-hidden transition-all duration-300 w-full hover:shadow-2xl hover:shadow-[#0A66C2]/10 hover:-translate-y-0.5"
+    className="group block bg-[#1b1f23] border border-slate-700/60 hover:border-[#0A66C2]/70 rounded-2xl overflow-hidden transition-all duration-300 w-full hover:shadow-2xl hover:shadow-[#0A66C2]/10 hover:-translate-y-0.5"
   >
     {/* Banner */}
-    <div className="h-20 bg-gradient-to-br from-[#0A66C2] to-[#004182] relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-          backgroundSize: '18px 18px',
-        }}
-      />
-      <div className="absolute bottom-0 right-0 w-24 h-24 bg-white/5 rounded-full -mb-8 -mr-8" />
+    <div className="h-24 bg-gradient-to-br from-[#0A66C2] via-[#0077b5] to-[#004182] relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)', backgroundSize: '16px 16px' }} />
+      <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white/5 rounded-full" />
+      <div className="absolute -top-4 -left-4 w-20 h-20 bg-white/5 rounded-full" />
     </div>
 
-    {/* Body */}
     <div className="px-5 pb-5">
-      {/* Avatar */}
-      <div className="-mt-9 mb-3">
-        <div className="w-16 h-16 rounded-full border-[3px] border-slate-900 bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-xl font-black text-white select-none shadow-lg">
-          MM
+      {/* Avatar with Open to Work ring */}
+      <div className="-mt-10 mb-3 flex items-end justify-between">
+        <ProfilePhoto size="card" openToWork />
+        {/* LinkedIn logo badge */}
+        <div className="mb-1 bg-[#0A66C2] rounded-lg p-2">
+          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
         </div>
       </div>
 
-      <h3 className="text-[15px] font-bold text-white mb-0.5">Miguel Moreira</h3>
-      <p className="text-xs text-slate-400 leading-snug mb-3">
+      {/* Name & headline */}
+      <h3 className="text-base font-bold text-white leading-tight mb-0.5">Miguel Moreira</h3>
+      <p className="text-[13px] text-slate-300 leading-snug mb-2">
         Clinical Full-Stack Builder · Medical Technologist & AI Operator
       </p>
 
+      {/* Company line */}
+      <p className="text-xs text-slate-500 mb-3">
+        LockedInWork · Hospital San José
+      </p>
+
       {/* Location */}
-      <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
+      <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-4">
         <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
         </svg>
-        Santiago, Chile · Open to Canada
-      </div>
-
-      {/* Stats row */}
-      <div className="flex gap-3 text-xs text-slate-500 mb-4 border-t border-slate-800 pt-3 mt-3">
-        <span><span className="text-slate-300 font-semibold">500+</span> connections</span>
+        Santiago, Chile
         <span className="text-slate-700">·</span>
-        <span><span className="text-slate-300 font-semibold">8</span> yrs experience</span>
+        <span className="text-green-400 font-medium">Open to work</span>
       </div>
 
-      {/* CTA Button */}
+      {/* Divider */}
+      <div className="border-t border-slate-700/50 pt-4 mb-4">
+        <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-2">Open to</p>
+        <div className="flex flex-wrap gap-1.5">
+          {['HealthTech', 'MedTech', 'Remote · Canada'].map((tag) => (
+            <span key={tag} className="text-xs text-slate-300 bg-slate-800 border border-slate-700 px-2.5 py-1 rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA */}
       <div className="flex items-center justify-center gap-2 w-full bg-[#0A66C2] group-hover:bg-[#0958a8] text-white text-sm font-semibold py-2.5 rounded-lg transition-colors duration-200">
         <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
-        View LinkedIn Profile
+        View LinkedIn Profile ↗
       </div>
     </div>
   </a>
