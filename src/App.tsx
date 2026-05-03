@@ -50,27 +50,30 @@ const projects = [
     tags: ['React', 'Firebase', 'B2B / Web'],
     title: 'Hospital CAE — Real-Time Booking System',
     description:
-      "Replaced a fragmented, paper-based legacy process with a real-time scheduling and analytics dashboard for a high-complexity hospital's Centro de Atención de Especialidades. Fully deployed in production — eliminating double-bookings and surfacing actionable stats for clinical management.",
-    impact: ['Zero double-bookings post-launch', 'Deployed in a high-complexity hospital', 'Adopted by clinical staff on day one'],
+      "Replaced a fragmented paper-based process at a high-complexity hospital's Centro de Atención de Especialidades with a real-time scheduling dashboard and analytics panel built in React + Firebase. Designed from the inside — as the clinical operator who lived the bottleneck — and shipped into full production.",
+    impact: ['Zero double-bookings post-launch', 'Live in a high-complexity hospital', 'Adopted by clinical staff on day one'],
     gradient: 'from-blue-500 to-cyan-400',
+    url: null,
   },
   {
     number: '02',
-    tags: ['Flutter', 'Supabase', 'Mobile'],
-    title: 'Yoinn — Cross-Platform Mobile App',
+    tags: ['Flutter', 'Supabase', 'iOS + Android'],
+    title: 'Yoinn — Social Discovery App',
     description:
-      'Engineered the full frontend and backend architecture of a cross-platform mobile application from zero to deployment. Leveraged AI to compress a 6-month roadmap into weeks, demonstrating end-to-end product ownership.',
-    impact: ['iOS + Android from a single codebase', 'Full-stack ownership', 'AI-accelerated delivery cycle'],
+      'Location-based social discovery platform that lets users find and join real events and experiences happening within 500m in real time. Built the entire frontend and backend with Flutter + Supabase — Live Map, Group Chat, verified profiles, and a zero-friction join flow. Shipped to both App Store and Google Play.',
+    impact: ['Live on App Store & Google Play', 'Real-time 500m event radar', 'AI-accelerated full-stack delivery'],
     gradient: 'from-violet-500 to-indigo-400',
+    url: 'https://www.yoinn.cl',
   },
   {
     number: '03',
-    tags: ['n8n', 'Claude API', 'B2B Agency'],
+    tags: ['n8n', 'Claude API', 'B2B SaaS'],
     title: 'LockedInWork — AI Automation Agency',
     description:
-      'My B2B entity deploying AI-powered automation pipelines for operational bottlenecks. Built end-to-end workflows using n8n and API integrations that replace high-friction manual processes for clients.',
-    impact: ['Automated multi-step workflows', 'B2B client delivery', 'AI-native architecture'],
+      'B2B agency deploying Chatbots and AI Agents that automate operational processes and replace repetitive manual labor at scale. Built end-to-end automation pipelines using n8n, the Claude API, and custom integrations — giving companies a digital workforce without the headcount.',
+    impact: ['Chatbots + AI Agents in production', 'B2B clients across Chile', 'Digital workforce infrastructure'],
     gradient: 'from-emerald-500 to-teal-400',
+    url: 'https://www.lockedinwork.com',
   },
 ];
 
@@ -337,7 +340,7 @@ const CaseStudies: React.FC = () => (
                   </span>
                 </div>
 
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag) => (
                       <span
@@ -356,13 +359,61 @@ const CaseStudies: React.FC = () => (
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-x-5 gap-y-2">
-                    {project.impact.map((item) => (
-                      <span key={item} className="flex items-center gap-2 text-sm text-slate-300">
-                        <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${project.gradient} shrink-0`} />
-                        {item}
-                      </span>
-                    ))}
+                  {/* Website preview */}
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block mb-6 rounded-xl overflow-hidden border border-slate-700/80 hover:border-slate-500 transition-colors duration-200"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {/* Browser chrome */}
+                      <div className="bg-slate-800 px-3 py-2 flex items-center gap-2.5">
+                        <div className="flex gap-1.5 shrink-0">
+                          <div className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/70" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-green-400/70" />
+                        </div>
+                        <div className="flex-1 bg-slate-700/80 rounded-md px-2.5 py-1 text-xs text-slate-400 truncate">
+                          {project.url.replace('https://', '')}
+                        </div>
+                        <svg className="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </div>
+                      {/* Screenshot via thum.io */}
+                      <div className="h-44 overflow-hidden bg-slate-800 relative">
+                        <img
+                          src={`https://image.thum.io/get/width/1200/crop/600/noanimate/${project.url}`}
+                          alt={`${project.title} preview`}
+                          className="w-full object-cover object-top"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
+                      </div>
+                    </a>
+                  )}
+
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <div className="flex flex-wrap gap-x-5 gap-y-2">
+                      {project.impact.map((item) => (
+                        <span key={item} className="flex items-center gap-2 text-sm text-slate-300">
+                          <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${project.gradient} shrink-0`} />
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                    {project.url && (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`shrink-0 text-xs font-semibold px-4 py-2 rounded-lg border transition-all duration-200 bg-gradient-to-r ${project.gradient} text-white border-transparent hover:opacity-90 hover:-translate-y-0.5`}
+                      >
+                        Visit Site ↗
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
