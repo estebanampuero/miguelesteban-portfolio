@@ -101,29 +101,32 @@ const ProfilePhoto: React.FC<ProfilePhotoProps> = ({ size, openToWork = false })
   const dim = isHero ? 'w-56 h-56 md:w-72 md:h-72' : 'w-20 h-20';
   const textSize = isHero ? 'text-5xl' : 'text-xl';
 
-  const inner = (
-    <div className={`${dim} rounded-full overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center`}>
-      {!error ? (
-        <img
-          src={PROFILE_PHOTO}
-          alt="Miguel Moreira"
-          className="w-full h-full object-cover object-top"
-          onError={() => setError(true)}
-        />
-      ) : (
-        <span className={`${textSize} font-black text-white select-none`}>MM</span>
-      )}
+  const photo = !error ? (
+    <img
+      src={PROFILE_PHOTO}
+      alt="Miguel Moreira"
+      className="w-full h-full object-cover object-center"
+      onError={() => setError(true)}
+    />
+  ) : (
+    <span className={`${textSize} font-black text-white select-none`}>MM</span>
+  );
+
+  const circle = (
+    <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center">
+      {photo}
     </div>
   );
 
-  if (!openToWork) return <div className={`${dim} rounded-full overflow-hidden`}>{inner}</div>;
+  if (!openToWork) {
+    return <div className={`${dim} rounded-full overflow-hidden shrink-0`}>{circle}</div>;
+  }
 
   return (
-    <div className={`relative ${dim}`}>
-      {/* Open to Work green ring — mismo estilo que LinkedIn */}
+    <div className={`${dim} relative shrink-0`}>
       <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-to-br from-[#6dae4f] via-[#4a9e31] to-[#6dae4f]">
         <div className="w-full h-full rounded-full bg-slate-950 p-[3px]">
-          {inner}
+          {circle}
         </div>
       </div>
     </div>
@@ -505,7 +508,7 @@ const Contact: React.FC = () => (
             <div className="flex flex-col sm:flex-row gap-4">
               {/* ← Replace href with your real Calendly link */}
               <a
-                href="https://calendly.com/tu-usuario"
+                href="https://calendly.com/miguel-moreira-ampuero/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-base transition-all duration-200 shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5"
