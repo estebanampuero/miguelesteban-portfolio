@@ -179,7 +179,7 @@ const Hero: React.FC = () => (
             View Case Studies
           </a>
           <a
-            href="https://linkedin.com/in/miguel-moreira"
+            href="https://www.linkedin.com/in/miguel-moreira-ampuero/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-slate-800/70 hover:bg-slate-800 text-white px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 border border-slate-700 hover:border-slate-500 backdrop-blur"
@@ -345,7 +345,7 @@ const TechStack: React.FC = () => (
 
 const LinkedInCard: React.FC = () => (
   <a
-    href="https://linkedin.com/in/tu-perfil" // ← reemplaza con tu URL real de LinkedIn
+    href="https://www.linkedin.com/in/miguel-moreira-ampuero/"
     target="_blank"
     rel="noopener noreferrer"
     className="group block bg-slate-900/80 border border-slate-800 hover:border-[#0A66C2]/60 rounded-2xl overflow-hidden transition-all duration-300 w-full hover:shadow-2xl hover:shadow-[#0A66C2]/10 hover:-translate-y-0.5"
@@ -481,7 +481,7 @@ const Footer: React.FC = () => (
         <span className="text-slate-400 font-medium">Miguel Moreira</span> · Clinical Full-Stack Builder
       </p>
       <div className="flex gap-6">
-        <a href="https://linkedin.com/in/miguel-moreira" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors duration-200">
+        <a href="https://www.linkedin.com/in/miguel-moreira-ampuero/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors duration-200">
           LinkedIn
         </a>
         <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors duration-200">
