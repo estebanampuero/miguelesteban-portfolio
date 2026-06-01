@@ -46,7 +46,7 @@ a Heidelberg-co-sponsored workshop on biostatistical analysis of genetic variant
 - bio-stock-lims — Laboratory Information Management System modeling clinical-lab workflows. https://github.com/estebanampuero/bio-stock-lims
 - urgencias-er — Emergency Department shift-handover with voice STT (faster-whisper), Chilean ESI triage, LLM summarization and RBAC (Python/Flask). https://github.com/estebanampuero/urgencias-er
 - Personal Health Agent — multimodal AI monorepo (Garmin + medical PDFs + voice) on FastAPI + LangGraph + Claude + Timescale + pgvector + Next.js. https://github.com/estebanampuero/personal-health
-- Yoinn — location-based social discovery app ("the app that gets you off the screen") that surfaces real activities and people within 500 m; shipped to the Apple App Store and Google Play (Flutter + Firebase), 12,000+ users and a 4.8-star rating. https://www.yoinn.cl
+- Yoinn — location-based social discovery app ("the app that gets you off the screen") that surfaces real activities and people within 500 m, with map-based discovery and two-tier verified profiles; shipped to the Apple App Store and Google Play (Flutter + Firebase). https://www.yoinn.cl
 - Yoinn Wallet — multi-tenant SaaS issuing live Apple Wallet & Google Wallet passes with MercadoPago (Next.js 15 + NestJS + Prisma + PostgreSQL). https://github.com/estebanampuero/yoinn_wallet
 - LockedInWork — AI automation studio building n8n + LLM pipelines for B2B clients. https://www.lockedinwork.com
 

@@ -115,7 +115,7 @@ const projects: Project[] = [
     title: 'Yoinn — Social Discovery App',
     description:
       '“La app que te saca de la pantalla.” A location-based social discovery app that surfaces real activities and real people within 500 m and lets you create a plan in 30 seconds. Map-based discovery, two-tier verification (blue for verified people, gold for organizations) — built end-to-end as solo founder in Flutter + Firebase and shipped to the Apple App Store and Google Play.',
-    impact: ['Live on App Store & Google Play · 4.8★', '12,000+ users · ~850 weekly activities', 'Real-time activity radar within 500 m'],
+    impact: ['Live on the App Store & Google Play', 'Real-time activity radar within 500 m', 'Two-tier verified profiles (blue / gold)'],
     gradient: 'from-cyan-500 to-teal-400',
     url: 'https://www.yoinn.cl',
     repo: 'https://github.com/estebanampuero/yoinn_app',
@@ -160,8 +160,8 @@ const techStack = [
 ];
 
 const stats = [
-  { label: 'Clinical Experience', value: '8+ Years', sub: 'High-complexity hospital labs' },
-  { label: 'Shipped to Production', value: '7+', sub: 'Apps, SaaS & clinical tools' },
+  { label: 'Clinical Background', value: 'Hospital Labs', sub: 'High-complexity, tertiary care' },
+  { label: 'What I Do', value: 'Ship to Production', sub: 'Apps, SaaS & clinical tools' },
   { label: 'MedTech Platforms', value: 'Roche · BD · Sysmex', sub: 'Certified vendor training' },
   { label: 'Target', value: 'Germany & EU', sub: 'Relocating · MedTech / HealthTech' },
 ];
@@ -453,7 +453,7 @@ const CaseStudies: React.FC = () => (
         <p className="text-blue-400 font-semibold text-xs uppercase tracking-widest mb-3">Proof of Work</p>
         <h2 className="text-3xl md:text-4xl font-bold mb-3">Case Studies</h2>
         <p className="text-slate-400 mb-14 max-w-2xl">
-          Seven products shipped end-to-end — from hospital-floor clinical tools to AI agents and
+          Products shipped end-to-end — from hospital-floor clinical tools to AI agents and
           multi-tenant SaaS. Most solo-built, most in production.
         </p>
       </FadeUp>
