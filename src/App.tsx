@@ -78,7 +78,7 @@ const projects: Project[] = [
   },
   {
     number: '02',
-    tags: ['LIMS', 'Clinical Lab', 'Full-Stack'],
+    tags: ['LIMS', 'Clinical Lab', 'Healthcare'],
     title: 'bio-stock-lims — Lab Information System',
     description:
       'A Laboratory Information Management System modelling sample tracking, inventory and clinical-lab workflows — built from direct insider knowledge of how a high-complexity hospital lab actually runs day to day. The kind of MedTech software most developers can only spec from the outside.',
@@ -161,7 +161,7 @@ const techStack = [
 
 const stats = [
   { label: 'Clinical Background', value: 'Hospital Labs', sub: 'High-complexity, tertiary care' },
-  { label: 'What I Do', value: 'Ship to Production', sub: 'Apps, SaaS & clinical tools' },
+  { label: 'How I Build', value: 'AI-Native', sub: 'AI as a force multiplier' },
   { label: 'MedTech Platforms', value: 'Roche · BD · Sysmex', sub: 'Certified vendor training' },
   { label: 'Target', value: 'Germany & EU', sub: 'Relocating · MedTech / HealthTech' },
 ];
@@ -209,7 +209,7 @@ const ProfilePhoto: React.FC<ProfilePhotoProps> = ({ size, openToWork = false })
   const photo = !error ? (
     <img
       src={PROFILE_PHOTO}
-      alt="Miguel Moreira — Clinical Full-Stack Builder"
+      alt="Miguel Moreira — AI-Native Builder & Clinical Domain Expert"
       width={isHero ? 288 : 80}
       height={isHero ? 288 : 80}
       className="w-full h-full object-cover object-center"
@@ -305,7 +305,7 @@ const Hero: React.FC = () => (
           <FadeUp>
             <span className="inline-flex items-center gap-2.5 text-blue-400 font-semibold tracking-widest uppercase text-xs mb-8 border border-blue-500/25 bg-blue-500/10 px-4 py-2 rounded-full">
               <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-              Clinical Full-Stack Builder · HealthTech &amp; MedTech · Relocating to Germany 🇩🇪
+              AI-Native Builder · Clinical Domain Expert · Relocating to Germany 🇩🇪
             </span>
           </FadeUp>
 
@@ -320,14 +320,13 @@ const Hero: React.FC = () => (
 
           <FadeUp delay={200}>
             <p className="text-xl text-slate-400 max-w-xl mb-4 leading-relaxed">
-              8 years inside high-complexity hospital labs — operating Roche, Sysmex, BD and Bruker
-              platforms daily. Then I learned to build with AI.
+              Medical Laboratory Technologist with 8 years inside high-complexity hospital labs —
+              operating Roche, Sysmex, BD and Bruker platforms daily.
             </p>
             <p className="text-xl text-slate-400 max-w-xl mb-10 leading-relaxed">
-              The result: a builder who understands clinical workflows{' '}
-              <span className="text-slate-300 font-medium">and</span> ships production software in
-              React, Flutter, FastAPI and n8n — with no translation layer between medicine and
-              engineering.
+              Now an <span className="text-slate-200 font-medium">AI-native builder</span>: I use AI
+              as a force multiplier to ship production software — web, mobile and backend — across the
+              clinical domain I actually come from. No translation layer between medicine and engineering.
             </p>
           </FadeUp>
 
@@ -391,9 +390,10 @@ const About: React.FC = () => (
           </p>
           <p>
             That context is my unfair advantage. I don't need a product manager to translate medical workflows
-            into specs. I write the specs. Then I ship the code — React, Flutter, FastAPI, Firebase, Supabase —
-            with AI compressing what used to take months into weeks. I even replaced a paper shift-handover at
-            the hospital with a digital one that{' '}
+            into specs — I write the specs from lived experience. And I'm not a traditional engineer: I'm an{' '}
+            <span className="text-slate-200 font-medium">AI-native builder</span>. AI is my force multiplier — it
+            turns clinical insight into shipped software (React, Flutter, FastAPI, Firebase, Supabase) in weeks,
+            not months. I even replaced a paper shift-handover at the hospital with a digital one that{' '}
             <span className="text-slate-200 font-medium">cut handover time roughly in half</span>.
           </p>
           <p>
@@ -754,7 +754,7 @@ const LinkedInCard: React.FC = () => (
       {/* Name & headline */}
       <h3 className="text-base font-bold text-white leading-tight mb-0.5">Miguel Moreira</h3>
       <p className="text-[13px] text-slate-300 leading-snug mb-2">
-        Clinical Full-Stack Builder · Medical Technologist &amp; AI Operator
+        AI-Native Builder · Medical Technologist &amp; Clinical Domain Expert
       </p>
 
       {/* Company line */}
@@ -871,7 +871,7 @@ const Footer: React.FC = () => (
     <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
       <p>
         © {new Date().getFullYear()}{' '}
-        <span className="text-slate-400 font-medium">Miguel Moreira</span> · Clinical Full-Stack Builder
+        <span className="text-slate-400 font-medium">Miguel Moreira</span> · AI-Native Builder · Clinical Domain Expert
       </p>
       <div className="flex gap-6">
         <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors duration-200">

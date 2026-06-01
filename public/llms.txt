@@ -1,12 +1,13 @@
-# Miguel Moreira — Clinical Full-Stack Builder
+# Miguel Moreira — AI-Native Builder & Clinical Domain Expert
 
-> Medical Laboratory Technologist with 8+ years in high-complexity hospital labs,
-> now building and shipping production HealthTech & MedTech software with React,
-> Flutter, FastAPI, n8n and AI (Claude API, LangGraph, RAG). Open to work and
-> relocating to Germany & the EU. English C1 (IELTS 7.0), German A2 (learning).
+> AI-native software builder and clinical domain expert. A Medical Laboratory
+> Technologist with 8+ years in high-complexity hospital labs who uses AI as a
+> force multiplier to build and ship production HealthTech & MedTech software with
+> React, Flutter, FastAPI, n8n and AI (Claude API, LangGraph, RAG). Open to work
+> and relocating to Germany & the EU. English C1 (IELTS 7.0), German A2 (learning).
 
 - Name: Miguel Moreira Ampuero ("Miguel Moreira")
-- Title: Clinical Full-Stack Builder · HealthTech & MedTech Engineer
+- Title: AI-Native Builder · Clinical Domain Expert · HealthTech & MedTech
 - Location: Puerto Montt, Chile — relocating to Germany / EU
 - Website: https://www.miguelesteban.cl
 - LinkedIn: https://www.linkedin.com/in/miguel-moreira-ampuero/
@@ -52,6 +53,6 @@ a Heidelberg-co-sponsored workshop on biostatistical analysis of genetic variant
 
 ## What Miguel is looking for
 Full-time roles or contracts at MedTech / HealthTech companies and scaleups in
-Germany and the EU — as a solutions engineer, full-stack engineer, founding
+Germany and the EU — as a solutions engineer, product engineer, founding
 engineer or clinical-software builder. Visa sponsorship welcome. Remote, hybrid
 or on-site.
