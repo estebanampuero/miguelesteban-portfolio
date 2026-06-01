@@ -1,0 +1,13 @@
+{
+  "name": "Miguel Moreira — Clinical Full-Stack Builder",
+  "short_name": "Miguel Moreira",
+  "description": "Clinical Full-Stack Builder · HealthTech & MedTech Engineer · Open to work in Germany & the EU.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

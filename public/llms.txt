@@ -1,0 +1,57 @@
+# Miguel Moreira — Clinical Full-Stack Builder
+
+> Medical Laboratory Technologist with 8+ years in high-complexity hospital labs,
+> now building and shipping production HealthTech & MedTech software with React,
+> Flutter, FastAPI, n8n and AI (Claude API, LangGraph, RAG). Open to work and
+> relocating to Germany & the EU. English C1 (IELTS 7.0), German A2 (learning).
+
+- Name: Miguel Moreira Ampuero ("Miguel Moreira")
+- Title: Clinical Full-Stack Builder · HealthTech & MedTech Engineer
+- Location: Puerto Montt, Chile — relocating to Germany / EU
+- Website: https://www.miguelesteban.cl
+- LinkedIn: https://www.linkedin.com/in/miguel-moreira-ampuero/
+- GitHub: https://github.com/estebanampuero
+- Email: miguel.moreira.ampuero@gmail.com
+- Booking: https://calendly.com/miguel-moreira-ampuero/30min
+
+## The unfair advantage
+Miguel is not a developer trying to learn healthcare. He is a clinical domain
+expert — a Medical Laboratory Technologist who spent nearly a decade at Hospital
+Puerto Montt (a high-complexity public hospital) operating Roche, Sysmex, BD,
+Bruker MALDI-TOF and Werfen platforms, processing up to 600 SARS-CoV-2 PCRs/day
+at the pandemic peak — who now uses AI to translate frontline clinical workflows
+into shipped software. He digitized a paper-based hospital shift-handover and cut
+handover time roughly in half.
+
+## Connection to Germany
+Miguel coordinated a cancer-genetics study in collaboration with the University of
+Heidelberg, recruiting ~100 patients across Chile (Arica to Castro), and completed
+a Heidelberg-co-sponsored workshop on biostatistical analysis of genetic variants.
+
+## Education & credentials
+- BSc, Medical Laboratory Technology (with Distinction) — Universidad Austral de Chile (2017)
+- Postgraduate Diploma, Quality Management & Clinical Lab Accreditation — Universidad de Concepción (2019, 180 hrs)
+- MedTech vendor training: BD (Bactec FX, Phoenix M50, MALDI Biotyper), Roche/Sysmex XN-1000, Werfen ACL TOP
+- English C1 (IELTS 7.0) · German A2 (learning) · Spanish (native)
+- Certified Kettlebell Instructor (Level I & II)
+
+## Tech stack
+- Frontend & mobile: React, Next.js, TypeScript, Flutter, Tailwind CSS
+- Backend & data: FastAPI, NestJS, Node.js, PostgreSQL, Prisma, Firebase, Supabase
+- AI & automation: Anthropic Claude API, OpenAI, LangGraph, RAG (pgvector), faster-whisper, n8n
+- MedTech platforms: Roche, Sysmex, BD, Bruker MALDI-TOF, Werfen ACL TOP
+
+## Selected projects
+- Hospital CAE — clinical scheduling & analytics tool, in production at Hospital Puerto Montt (Next.js/TypeScript). https://github.com/estebanampuero/cae-2.0
+- bio-stock-lims — Laboratory Information Management System modeling clinical-lab workflows. https://github.com/estebanampuero/bio-stock-lims
+- urgencias-er — Emergency Department shift-handover with voice STT (faster-whisper), Chilean ESI triage, LLM summarization and RBAC (Python/Flask). https://github.com/estebanampuero/urgencias-er
+- Personal Health Agent — multimodal AI monorepo (Garmin + medical PDFs + voice) on FastAPI + LangGraph + Claude + Timescale + pgvector + Next.js. https://github.com/estebanampuero/personal-health
+- Yoinn — mobile loyalty/wallet app shipped to the Apple App Store and Google Play (Flutter + Firebase), ~200 users at soft launch. https://www.yoinn.cl
+- Yoinn Wallet — multi-tenant SaaS issuing live Apple Wallet & Google Wallet passes with MercadoPago (Next.js 15 + NestJS + Prisma + PostgreSQL). https://github.com/estebanampuero/yoinn_wallet
+- LockedInWork — AI automation studio building n8n + LLM pipelines for B2B clients. https://www.lockedinwork.com
+
+## What Miguel is looking for
+Full-time roles or contracts at MedTech / HealthTech companies and scaleups in
+Germany and the EU — as a solutions engineer, full-stack engineer, founding
+engineer or clinical-software builder. Visa sponsorship welcome. Remote, hybrid
+or on-site.
