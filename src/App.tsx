@@ -61,6 +61,7 @@ interface Project {
   gradient: string;
   url: string | null;
   repo: string | null;
+  logo?: string;
 }
 
 const projects: Project[] = [
@@ -110,14 +111,15 @@ const projects: Project[] = [
   },
   {
     number: '05',
-    tags: ['Flutter', 'Firebase', 'iOS + Android'],
-    title: 'Yoinn — Mobile Loyalty & Wallet App',
+    tags: ['Flutter', 'Firebase', 'iOS + Android', 'Social'],
+    title: 'Yoinn — Social Discovery App',
     description:
-      'Mobile loyalty/wallet app shipped end-to-end as solo founder: Flutter + Firebase, published to both the Apple App Store and Google Play, including a live Apple Pass Type ID. From zero to stores — product, code, backend, store compliance and live operations.',
-    impact: ['Live on App Store & Google Play', '~200 active users at soft launch', 'Solo-built, zero to stores'],
-    gradient: 'from-violet-500 to-indigo-400',
+      '“La app que te saca de la pantalla.” A location-based social discovery app that surfaces real activities and real people within 500 m and lets you create a plan in 30 seconds. Map-based discovery, two-tier verification (blue for verified people, gold for organizations) — built end-to-end as solo founder in Flutter + Firebase and shipped to the Apple App Store and Google Play.',
+    impact: ['Live on App Store & Google Play · 4.8★', '12,000+ users · ~850 weekly activities', 'Real-time activity radar within 500 m'],
+    gradient: 'from-cyan-500 to-teal-400',
     url: 'https://www.yoinn.cl',
     repo: 'https://github.com/estebanampuero/yoinn_app',
+    logo: '/yoinn-logo.png',
   },
   {
     number: '06',
@@ -485,9 +487,21 @@ const CaseStudies: React.FC = () => (
                     ))}
                   </div>
 
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 group-hover:text-white transition-colors duration-200">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center gap-3 mb-3">
+                    {project.logo && (
+                      <img
+                        src={project.logo}
+                        alt={`${project.title} logo`}
+                        width={40}
+                        height={40}
+                        className="w-10 h-10 rounded-xl shrink-0 ring-1 ring-slate-700/60 bg-slate-900"
+                        loading="lazy"
+                      />
+                    )}
+                    <h3 className="text-xl md:text-2xl font-bold group-hover:text-white transition-colors duration-200">
+                      {project.title}
+                    </h3>
+                  </div>
                   <p className="text-slate-400 leading-relaxed mb-6 text-[15px] md:text-base">
                     {project.description}
                   </p>
